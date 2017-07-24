@@ -17,7 +17,13 @@ return [
             'class' => 'api\modules\v1\Module'
         ]
     ],
-    'components' => [        
+    'components' => [   
+        'request' => [
+            'csrfParam' => '_csrf-api',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],            
+        ],         
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => false,
